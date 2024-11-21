@@ -1,0 +1,159 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root{
+    --Very-Dark-Gray: hsl(0, 0%, 17%);
+    --Dark-Gray: hsl(0, 0%, 59%);
+    --font-size: 16px;
+    --banner-height: 270px;
+    
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Rubik";
+    font-size: var(--font-size);
+}
+
+.content{
+    width: 100%;
+    height: var(--banner-height);
+    max-height: var(--banner-height);
+    background: url("./images/pattern-bg-desktop.png") no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+
+    .title{
+        color: white;
+        text-transform: capitalize;
+        letter-spacing: 1.2px;
+    }
+    .Input-field{
+        width: min(90%,400px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        form{
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            input{
+                width: 90%;
+                height: 100%;
+                padding: 20px;
+                background: transparent;
+                border: none;
+                font-family: "Rubik";
+                font-size: 16px;
+                letter-spacing: 1.2px;
+                outline: none;
+            }
+            button{
+                width: 10%;
+                height: 100%;
+                border: none;
+                background-color: var(--Very-Dark-Gray);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+
+                img{
+                    object-fit: contain;
+                    width: 40%;
+                }
+            }
+        }
+    }
+}
+.output-content{
+    position: absolute;
+    top: var(--banner-height);
+    left: 50%;
+    z-index: 99;
+    transform: translateY(-50%) translateX(-50%);
+    width: min(90%,950px);
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 10px;
+    hr{
+        min-height: 60px;
+        height: 100%;
+        color: var(--Dark-Gray);
+        border-style: solid;
+        display: inline-block;
+        opacity: .5;
+    }
+    .section{
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: space-between;
+        height: 100%;
+        gap: 5px;
+        h4{
+            color: var(--Dark-Gray);
+            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+        h3{
+            font-size: 18px;
+            letter-spacing: .7px;
+            width: 100%;
+        }
+        .ISP{
+            word-break: break-all;
+            padding-right: 30px;
+        }
+    }
+}
+.map-section{
+    position: relative;
+        width: 100%;
+        height: calc(100vh - var(--banner-height));
+        z-index: 0;
+    #map{
+        height: calc(100vh - var(--banner-height));
+    }
+}
+@media only screen and (max-width: 650px) {
+    .title{
+        font-size: 1.5rem;
+    }
+    .Input-field{
+        .ip-input{
+            font-size: 12px;
+            width: 80%;
+        }
+        .submit-btn{
+            width: 20%;
+        }
+    }
+    .output-content{
+        top: calc(var(--banner-height) * 1.3);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    hr{
+        display: none !important;
+    }
+}
